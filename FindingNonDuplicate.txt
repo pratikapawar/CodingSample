@@ -1,0 +1,34 @@
+/*
+Given an array of integers, every element appears twice except for one. Find that single one.
+
+Note:
+Your algorithm should have a linear runtime complexity. Could you implement it without using extra memory?
+*/
+
+import java.util.*;
+public class Solution {
+    public int singleNumber(int[] a) {
+    
+    Arrays.sort(a);
+    boolean repeat = false;
+    for(int i=0; i<a.length;i++)
+    {
+        if(i!=a.length-1 && a[i]==a[i+1])
+        {
+            repeat = true;
+        }
+        else if(repeat)
+        {
+            repeat = false;
+        }
+        else
+        {
+            return a[i];
+        }
+        
+        
+    }
+    return 0;
+    
+    }
+}
